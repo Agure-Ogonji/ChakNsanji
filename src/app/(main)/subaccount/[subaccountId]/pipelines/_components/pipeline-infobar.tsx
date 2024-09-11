@@ -71,7 +71,7 @@ const PipelineInfoBar = ({ pipelineId, pipelines, subAccountId }: Props) => {
                     key={pipeline.id}
                     href={`/subaccount/${subAccountId}/pipelines/${pipeline.id}`}
                   >
-                    <div className={cn('relative flex select-none items-center rounded-sm')}
+                    <CommandItem className={cn('relative flex select-none items-center rounded-sm')}
                       key={pipeline.id}
                       value={pipeline.id}
                       onSelect={(currentValue) => {
@@ -86,7 +86,7 @@ const PipelineInfoBar = ({ pipelineId, pipelines, subAccountId }: Props) => {
                         )}
                       />
                       {pipeline.name}
-                    </div>
+                    </CommandItem>
                   </Link>
                 ))}
                 <Button

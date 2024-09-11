@@ -9,7 +9,7 @@ import clsx from 'clsx'
 import { AspectRatio } from '../ui/aspect-ratio'
 import Image from 'next/image'
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandList } from '../ui/command'
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '../ui/command'
 import Link from 'next/link'
 import CustomModal from '../global/custom-modal'
 import { Separator } from '../ui/separator'
@@ -148,7 +148,7 @@ const MenuOptions = ({
                                 <CommandGroup heading="Accounts">
                     {!!subAccounts
                       ? subAccounts.map((subaccount) => (
-                          <div key={subaccount.id}>
+                          <CommandItem key={subaccount.id}>
                             {defaultOpen ? (
                               <Link
                                 href={`/subaccount/${subaccount.id}`}
@@ -192,7 +192,7 @@ const MenuOptions = ({
                                 </Link>
                               </SheetClose>
                             )}
-                          </div>
+                          </CommandItem>
                           
                         ))
                       : 'No Accounts'}
